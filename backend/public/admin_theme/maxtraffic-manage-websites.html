@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MaxTraffic admin - Manage websites</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/compiled/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/compiled/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/compiled/icons.css">
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- lato font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar navbar-inverse" role="banner">
+        <div class="navbar-header text-center">
+            <a class="navbar-brand" href="maxtraffic-dashboard.html"><img src="img/maxtraffic-logo.png"></a>
+        </div>
+        <ul class="nav navbar-nav pull-right">
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Choose website
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="maxtraffic-dashboard.html">webpage.com</a></li>
+                    <li><a href="maxtraffic-dashboard.html">my-store.com</a></li>
+                </ul>
+            </li>
+            <li class="settings">
+                <a href="maxtraffic-manage-websites.html" role="button">
+                    <i class="icon-cog"></i>
+                </a>
+            </li>
+            <li class="settings">
+                <a href="maxtraffic-signin.html" role="button">
+                    <i class="icon-share-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </header>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li>
+                <a href="maxtraffic-dashboard.html">
+                    <i class="icon-signal"></i>
+                    <span>webpage.com</span>
+                </a>
+            </li>
+            <li>
+                <a href="maxtraffic-dashboard.html">
+                    <i class="icon-signal"></i>
+                    <span>my-store.eu</span>
+                </a>
+            </li>
+            <li class="active">
+                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="maxtraffic-manage-websites.html">
+                    <i class="icon-cog"></i>
+                    <span>Manage websites</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+
+        <div id="pad-wrapper">
+
+
+            <!-- website table -->
+            <div class="">
+                <div class="row head">
+                    <div class="col-md-12">
+                        <h4>Websites <small>All your websites</small></h4>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:34px;">
+                    <div class="col-md-12 text-right">
+                        <a class="btn-flat new-product" style="padding:4px 14px;" data-toggle="modal" href="#addWebsiteModal">+ Add website</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-md-4">
+                                    Website
+                                </th>
+                                <th class="col-md-4">
+                                    <span class="line"></span>BounceBack tracking code
+                                </th>
+                                <th class="col-md-4">
+                                    <span class="line"></span>Conversion tracking code
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- row -->
+                            <tr class="first">
+                                <td>
+                                    http://www.webpage.com
+                                </td>
+                                <td>
+                                    <a data-toggle="modal" href="#codeModal" class="btn-glow">BounceBack code</a>
+                                </td>
+                                <td>
+                                    <a data-toggle="modal" href="#codeModal" class="btn-glow">Conversion code</a>
+                                </td>
+                            </tr>
+                            <!-- row -->
+                            <tr>
+                                <td>
+                                    http://www.my-store.com
+                                </td>
+                                <td>
+                                    <a data-toggle="modal" href="#codeModal" class="btn-glow">BounceBack code</a>
+                                </td>
+                                <td>
+                                    <a data-toggle="modal" href="#codeModal" class="btn-glow">Conversion code</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- end table -->
+
+        </div>
+    </div>
+
+
+    <div class="modal fade in" id="addWebsiteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Add new website</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="url" class="col-lg-4 control-label">Website URL:</label>
+                        <div class="col-lg-8">
+                            <input type="text" id="url" class="form-control" placeholder="http://">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add website</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade in" id="codeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">BounceBack code</h4>
+            </div>
+            <div class="modal-body">
+                <p>Insert following code right after &lt;body&gt; tag:</p>
+                <p>&lt;script src="http://maxtraffic.eu/scripts/?id=1"&gt;&lt;/script&gt;</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add website</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+	<!-- scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <!-- knob -->
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/theme.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            // jQuery Knobs
+            $(".knob").knob();
+
+
+
+            // jQuery UI Sliders
+            $(".slider-sample1").slider({
+                value: 100,
+                min: 1,
+                max: 500
+            });
+            $(".slider-sample2").slider({
+                range: "min",
+                value: 130,
+                min: 1,
+                max: 500
+            });
+            $(".slider-sample3").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [ 40, 170 ],
+            });
+
+
+            // Switch slide buttons
+            $('.slider-button').click(function() {
+                if ($(this).hasClass("on")) {
+                    $(this).removeClass('on').html($(this).data("off-text"));   
+                    $(this).parent().addClass('delay').delay(1500).removeClass('delay').removeClass('maxtraffic');
+                } else {
+                    $(this).addClass('on').html($(this).data("on-text"));
+                    $(this).parent().addClass('maxtraffic');
+                }
+            });
+
+            
+
+            // jQuery Flot Chart
+            var visits = [[1, 95], [2, 106], [3, 112], [4, 113],[5, 91],[6, 141],[7, 170],[8, 246],[9, 119],[10, 93],[11, 0],[12, 0]];
+            var visitors = [[1, 196], [2, 180], [3, 260], [4, 283],[5, 201],[6, 297],[7, 366],[8, 587],[9, 278],[10,199],[11,0],[12, 0]];
+
+            var plot = $.plot($("#statsChart"),
+                [ { data: visits, label: "Bouncing"},
+                 { data: visitors, label: "Visits" }], {
+                    series: {
+                        lines: { show: true,
+                                lineWidth: 1,
+                                fill: true, 
+                                fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
+                             },
+                        points: { show: true, 
+                                 lineWidth: 2,
+                                 radius: 3
+                             },
+                        shadowSize: 0,
+                        stack: true
+                    },
+                    grid: { hoverable: true, 
+                           clickable: true, 
+                           tickColor: "#f9f9f9",
+                           borderWidth: 0
+                        },
+                    legend: {
+                            // show: false
+                            labelBoxBorderColor: "#fff"
+                        },  
+                    colors: ["#F97A2F", "#a7b5c5"],
+                    xaxis: {
+                        ticks: [[1, "JAN"], [2, "FEB"], [3, "MAR"], [4,"APR"], [5,"MAY"], [6,"JUN"], 
+                               [7,"JUL"], [8,"AUG"], [9,"SEP"], [10,"OCT"], [11,"NOV"], [12,"DEC"]],
+                        font: {
+                            size: 12,
+                            family: "Open Sans, Arial",
+                            variant: "small-caps",
+                            color: "#697695"
+                        }
+                    },
+                    yaxis: {
+                        ticks:3, 
+                        tickDecimals: 0,
+                        font: {size:12, color: "#9da3a9"}
+                    }
+                 });
+
+            function showTooltip(x, y, contents) {
+                $('<div id="tooltip">' + contents + '</div>').css( {
+                    position: 'absolute',
+                    display: 'none',
+                    top: y - 30,
+                    left: x - 50,
+                    color: "#fff",
+                    padding: '2px 5px',
+                    'border-radius': '6px',
+                    'background-color': '#000',
+                    opacity: 0.80
+                }).appendTo("body").fadeIn(200);
+            }
+
+            var previousPoint = null;
+            $("#statsChart").bind("plothover", function (event, pos, item) {
+                if (item) {
+                    if (previousPoint != item.dataIndex) {
+                        previousPoint = item.dataIndex;
+
+                        $("#tooltip").remove();
+                        var x = item.datapoint[0].toFixed(0),
+                            y = item.datapoint[1].toFixed(0);
+
+                        var month = item.series.xaxis.ticks[item.dataIndex].label;
+
+                        showTooltip(item.pageX, item.pageY,
+                                    item.series.label + " of " + month + ": " + y);
+                    }
+                }
+                else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

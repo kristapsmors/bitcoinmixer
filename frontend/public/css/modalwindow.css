@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+h2.modalheader{
+	font-size: 18px;
+	color: #ec7800;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 35px;
+}
+#modalwindow{
+	display: none;
+}
+#modal-window{
+	height: 585px;
+	background-image: url(background-light.png);	
+}
+#modal-window p.maindescriptor{
+	font-size: 13px;
+}
+#modal-window p.blockdescriptor{
+	float: left; 
+	display: block;
+}
+#modal-window input#destination{
+	background-image: url(form-address.png);
+	background-repeat: no-repeat;
+	height: 28px;
+	width: 325px;
+	padding-right: 10px;
+	padding-left: 35px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	background-color: transparent;
+	font-size: 14px;
+	color: #999999;
+	float: left;
+	margin-left: 15px;
+}
+#modal-window table{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-top-color: #c3c3c3;
+	border-right-color: #c3c3c3;
+	margin-top: 20px;
+}
+#modal-window table tr{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #c3c3c3;
+}
+#modal-window table tr.white{
+	background-color: #FFF;
+}
+#modal-window table tr.grey{
+	background-color: #e0e0e0;	
+}
+#modal-window table tr td{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #c3c3c3;
+	width: 50%;
+	padding-left: 15px;
+	font-size: 13px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+#modal-window table tr td.descriptordata{
+	color: #4c4c4c;
+}
+#modal-window table tr td.contentdata{
+	color: #ec7800;
+	font-weight: bold;	
+}
+#modal-window #error-area{
+	position: relative;
+	margin-top: 30px;
+	height: 22px;
+}
+.confirmorder{
+	border: none;
+	background-color: transparent;
+	background-image: url(submit-order-confirmorder.png);
+	height: 48px;
+	width: 247px;
+	text-shadow: 1px 1px #a44708;
+	font-size: 24px;
+	font-weight: 600;
+	color: #FFF;
+	text-align: left;
+	text-indent: 35px;
+	padding: 0px;
+	margin-top: 25px;
+	position: relative;
+	left: 50%;
+	margin-left: -123px;
+}
+.confirmorder:hover{
+	cursor: pointer;
+	background-image: url(submit-order-confirmorder-2.png);	
+}

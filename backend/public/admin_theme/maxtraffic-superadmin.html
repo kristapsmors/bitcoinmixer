@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MaxTraffic admin - Users</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <!-- bootstrap -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="css/compiled/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/compiled/elements.css">
+    <link rel="stylesheet" type="text/css" href="css/compiled/icons.css">
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="css/compiled/index.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- lato font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- navbar -->
+    <header class="navbar navbar-inverse" role="banner">
+        <div class="navbar-header text-center">
+            <a class="navbar-brand" href="maxtraffic-dashboard.html"><img src="img/maxtraffic-logo.png"></a>
+        </div>
+        <ul class="nav navbar-nav pull-right">
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Super admin
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="maxtraffic-superadmin.html">Users</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Choose website
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="maxtraffic-dashboard.html">webpage.com</a></li>
+                    <li><a href="maxtraffic-dashboard.html">my-store.com</a></li>
+                </ul>
+            </li>
+            <li class="settings">
+                <a href="maxtraffic-manage-websites.html" role="button">
+                    <i class="icon-cog"></i>
+                </a>
+            </li>
+            <li class="settings">
+                <a href="maxtraffic-signin.html" role="button">
+                    <i class="icon-share-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </header>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li class="active">
+                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="maxtraffic-superadmin.html">
+                    <i class="icon-group"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+	<!-- main container -->
+    <div class="content">
+
+        
+        <div id="pad-wrapper">
+
+            <!-- campaign table sample -->
+            <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
+            <div class="table-products">
+                <div class="row head">
+                    <div class="col-md-16">
+                        <h4>Users <small>All MaxTraffic users</small></h4>
+                    </div>
+                </div>
+
+                <div class="row filter-block">
+                    <div class="col-md-16 text-right">
+                        <a class="btn-flat new-product" data-toggle="modal" href="#addUser">+ Add user</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-md-3">
+                                    Name
+                                </th>
+                                <th class="col-md-3">
+                                    <span class="line"></span>Email
+                                </th>
+                                <th class="col-md-3">
+                                    <span class="line"></span>Website
+                                </th>
+                                <th class="col-md-3">
+                                    <span class="line"></span>Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- row -->
+                            <tr class="first">
+                                <td class=" ">
+                                    Kristaps Mors
+                                </td>
+                                <td>
+                                    kristaps@maxtraffic.eu
+                                </td>
+                                <td class=" ">
+                                    maxtraffic.eu,<br/>itpakalpojumi.lv
+                                </td>
+                                <td>
+                                    <div class="slider-frame maxtraffic">
+                                        <span data-on-text="ON" data-off-text="OFF" class="slider-button on">ON</span>
+                                    </div>
+                                    <ul class="actions">
+                                        <li><i href="" class="icon-exchange"></i></li>
+                                        <li><i data-toggle="modal" href="#editUser" class="table-edit"></i></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <!-- row -->
+                            <tr>
+                                <td class=" ">
+                                    Andis Silakaktiņš
+                                </td>
+                                <td>
+                                    andis@maxtraffic.eu
+                                </td>
+                                <td class=" ">
+                                    silakaktins.lv
+                                </td>
+                                <td>
+                                    <div class="slider-frame maxtraffic">
+                                        <span data-on-text="ON" data-off-text="OFF" class="slider-button on">ON</span>
+                                    </div>
+                                    <ul class="actions">
+                                        <li><i href="" class="icon-exchange"></i></li>
+                                        <li><i data-toggle="modal" href="#editUser" class="table-edit"></i></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <!-- row -->
+                            <tr>
+                                <td class=" ">
+                                    Sandra Dzērve
+                                </td>
+                                <td>
+                                    sandra@doublesun.lv
+                                </td>
+                                <td class=" ">
+                                    doublesun.lv
+                                </td>
+                                <td>
+                                    <div class="slider-frame">
+                                        <span data-on-text="ON" data-off-text="OFF" class="slider-button">OFF</span>
+                                    </div>
+                                    <ul class="actions">
+                                        <li><i href="" class="icon-exchange"></i></li>
+                                        <li><i data-toggle="modal" href="#editUser" class="table-edit"></i></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- end table -->
+        </div>
+    </div>
+    
+    <div class="modal fade in" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Add new user</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="username" class="col-lg-4 control-label">User name:</label>
+                        <div class="col-lg-8">
+                            <input type="text" id="username" class="form-control" placeholder="Input name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="useremail" class="col-lg-4 control-label">User email:</label>
+                        <div class="col-lg-8">
+                            <input type="email" id="useremail" class="form-control" placeholder="email@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userpassword" class="col-lg-4 control-label">Password:</label>
+                        <div class="col-lg-8">
+                            <input type="password" id="userpassword" class="form-control" placeholder="******">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="usercomments" class="col-lg-4 control-label">Billing info and other comments:</label>
+                        <div class="col-lg-8">
+                            <textarea id="usercomments" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label">Status:</label>
+                        <div class="col-lg-8">
+                            <div class="slider-frame maxtraffic" style="margin-top:4px;">
+                                <span data-on-text="ON" data-off-text="OFF" class="slider-button on">ON</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add User</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade in" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="modal-title">Edit user</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="username" class="col-lg-4 control-label">User name:</label>
+                        <div class="col-lg-8">
+                            <input type="text" id="username" class="form-control" placeholder="Input name" value="Kristaps Mors">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="useremail" class="col-lg-4 control-label">User email:</label>
+                        <div class="col-lg-8">
+                            <input type="email" id="useremail" class="form-control" placeholder="email@example.com" value="kristaps@maxtraffic.eu">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userpassword" class="col-lg-4 control-label">Password:</label>
+                        <div class="col-lg-8">
+                            <input type="password" id="userpassword" class="form-control" placeholder="******" value="parole">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="usercomments" class="col-lg-4 control-label">Billing info and other comments:</label>
+                        <div class="col-lg-8">
+                            <textarea id="usercomments" class="form-control">No billing for this user</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-4 control-label">Status:</label>
+                        <div class="col-lg-8">
+                            <div class="slider-frame maxtraffic" style="margin-top:4px;">
+                                <span data-on-text="ON" data-off-text="OFF" class="slider-button on">ON</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Add User</button>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
+	<!-- scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <!-- knob -->
+    <script src="js/jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="js/jquery.flot.js"></script>
+    <script src="js/jquery.flot.stack.js"></script>
+    <script src="js/jquery.flot.resize.js"></script>
+    <script src="js/theme.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            // jQuery Knobs
+            $(".knob").knob();
+
+
+
+            // jQuery UI Sliders
+            $(".slider-sample1").slider({
+                value: 100,
+                min: 1,
+                max: 500
+            });
+            $(".slider-sample2").slider({
+                range: "min",
+                value: 130,
+                min: 1,
+                max: 500
+            });
+            $(".slider-sample3").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [ 40, 170 ],
+            });
+
+
+            // Switch slide buttons
+            $('.slider-button').click(function() {
+                if ($(this).hasClass("on")) {
+                    $(this).removeClass('on').html($(this).data("off-text"));   
+                    $(this).parent().addClass('delay').delay(1500).removeClass('delay').removeClass('maxtraffic');
+                } else {
+                    $(this).addClass('on').html($(this).data("on-text"));
+                    $(this).parent().addClass('maxtraffic');
+                }
+            });
+
+            
+
+            // jQuery Flot Chart
+            var visits = [[1, 95], [2, 106], [3, 112], [4, 113],[5, 91],[6, 141],[7, 170],[8, 246],[9, 119],[10, 93],[11, 0],[12, 0]];
+            var visitors = [[1, 196], [2, 180], [3, 260], [4, 283],[5, 201],[6, 297],[7, 366],[8, 587],[9, 278],[10,199],[11,0],[12, 0]];
+
+            var plot = $.plot($("#statsChart"),
+                [ { data: visits, label: "Bounce"},
+                 { data: visitors, label: "Visits" }], {
+                    series: {
+                        lines: { show: true,
+                                lineWidth: 1,
+                                fill: true, 
+                                fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
+                             },
+                        points: { show: true, 
+                                 lineWidth: 2,
+                                 radius: 3
+                             },
+                        shadowSize: 0,
+                        stack: true
+                    },
+                    grid: { hoverable: true, 
+                           clickable: true, 
+                           tickColor: "#f9f9f9",
+                           borderWidth: 0
+                        },
+                    legend: {
+                            // show: false
+                            labelBoxBorderColor: "#fff"
+                        },  
+                    colors: ["#F97A2F", "#a7b5c5"],
+                    xaxis: {
+                        ticks: [[1, "JAN"], [2, "FEB"], [3, "MAR"], [4,"APR"], [5,"MAY"], [6,"JUN"], 
+                               [7,"JUL"], [8,"AUG"], [9,"SEP"], [10,"OCT"], [11,"NOV"], [12,"DEC"]],
+                        font: {
+                            size: 12,
+                            family: "Open Sans, Arial",
+                            variant: "small-caps",
+                            color: "#697695"
+                        }
+                    },
+                    yaxis: {
+                        ticks:3, 
+                        tickDecimals: 0,
+                        font: {size:12, color: "#9da3a9"}
+                    }
+                 });
+
+            function showTooltip(x, y, contents) {
+                $('<div id="tooltip">' + contents + '</div>').css( {
+                    position: 'absolute',
+                    display: 'none',
+                    top: y - 30,
+                    left: x - 50,
+                    color: "#fff",
+                    padding: '2px 5px',
+                    'border-radius': '6px',
+                    'background-color': '#000',
+                    opacity: 0.80
+                }).appendTo("body").fadeIn(200);
+            }
+
+            var previousPoint = null;
+            $("#statsChart").bind("plothover", function (event, pos, item) {
+                if (item) {
+                    if (previousPoint != item.dataIndex) {
+                        previousPoint = item.dataIndex;
+
+                        $("#tooltip").remove();
+                        var x = item.datapoint[0].toFixed(0),
+                            y = item.datapoint[1].toFixed(0);
+
+                        var month = item.series.xaxis.ticks[item.dataIndex].label;
+
+                        showTooltip(item.pageX, item.pageY,
+                                    item.series.label + " of " + month + ": " + y);
+                    }
+                }
+                else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            });
+
+
+            // jQuery Flot Chart
+            var visits = [[1, 35], [2, 66], [3, 52], [4, 53],[5, 41],[6, 39],[7, 70],[8, 98],[9, 29],[10, 23],[11, 0],[12, 0]];
+            var visitors = [[1, 96], [2, 80], [3, 60], [4, 83],[5, 101],[6, 97],[7, 66],[8, 87],[9, 78],[10,99],[11,0],[12, 0]];
+
+            var plot = $.plot($("#statsChartCampaign"),
+                [ { data: visits, label: "Bounce"},
+                 { data: visitors, label: "Visits" }], {
+                    series: {
+                        lines: { show: true,
+                                lineWidth: 1,
+                                fill: true, 
+                                fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
+                             },
+                        points: { show: true, 
+                                 lineWidth: 2,
+                                 radius: 3
+                             },
+                        shadowSize: 0,
+                        stack: true
+                    },
+                    grid: { hoverable: true, 
+                           clickable: true, 
+                           tickColor: "#f9f9f9",
+                           borderWidth: 0
+                        },
+                    legend: {
+                            // show: false
+                            labelBoxBorderColor: "#fff"
+                        },  
+                    colors: ["#F97A2F", "#a7b5c5"],
+                    xaxis: {
+                        ticks: [[1, "JAN"], [2, "FEB"], [3, "MAR"], [4,"APR"], [5,"MAY"], [6,"JUN"], 
+                               [7,"JUL"], [8,"AUG"], [9,"SEP"], [10,"OCT"], [11,"NOV"], [12,"DEC"]],
+                        font: {
+                            size: 12,
+                            family: "Open Sans, Arial",
+                            variant: "small-caps",
+                            color: "#697695"
+                        }
+                    },
+                    yaxis: {
+                        ticks:3, 
+                        tickDecimals: 0,
+                        font: {size:12, color: "#9da3a9"}
+                    }
+                 });
+
+            function showTooltip(x, y, contents) {
+                $('<div id="tooltip">' + contents + '</div>').css( {
+                    position: 'absolute',
+                    display: 'none',
+                    top: y - 30,
+                    left: x - 50,
+                    color: "#fff",
+                    padding: '2px 5px',
+                    'border-radius': '6px',
+                    'background-color': '#000',
+                    opacity: 0.80
+                }).appendTo("body").fadeIn(200);
+            }
+
+            var previousPoint = null;
+            $("#statsChartCampaign").bind("plothover", function (event, pos, item) {
+                if (item) {
+                    if (previousPoint != item.dataIndex) {
+                        previousPoint = item.dataIndex;
+
+                        $("#tooltip").remove();
+                        var x = item.datapoint[0].toFixed(0),
+                            y = item.datapoint[1].toFixed(0);
+
+                        var month = item.series.xaxis.ticks[item.dataIndex].label;
+
+                        showTooltip(item.pageX, item.pageY,
+                                    item.series.label + " of " + month + ": " + y);
+                    }
+                }
+                else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            });
+
+
+        });
+    </script>
+</body>
+</html>
